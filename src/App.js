@@ -4,7 +4,6 @@ import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
-import BackgroundTheme from './components/BackgroundTheme';
 import {
   Routes,
   Route,
@@ -47,22 +46,15 @@ function App() {
     }
   };
 
-  const setBackgroundColor = (color) => {
-    document.body.style.backgroundColor = color;
-    showAlert(`Background set to ${color}`,"success");
-    console.log(`setBackgroundColor ${color}`);
-  };
-
   return (
     <>
     
     <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode}/>
       <strong><Alert alert={alert} /></strong>
-      {/* <BackgroundTheme setBackgroundColor={setBackgroundColor}/> */}
       <div className="container">
       <Routes>
         <Route exact path="/" element={<TextForm  heading="Enter text to analyze" showAlert={showAlert} mode={mode}/>}/>
-        <Route exact path="/about" element={<About/>}/>
+        <Route exact path="/about" element={<About mode={mode} />}/>
       </Routes>
       </div>
     
