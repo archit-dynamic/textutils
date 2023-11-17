@@ -61,7 +61,7 @@ function App() {
       {/* <BackgroundTheme setBackgroundColor={setBackgroundColor}/> */}
       <div className="container">
       <Routes>
-        <Route exact path="/" element={<TextForm  heading="Enter the text to analyze below" showAlert={showAlert} mode={mode}/>}/>
+        <Route exact path="/" element={<TextForm  heading="Enter text to analyze" showAlert={showAlert} mode={mode}/>}/>
         <Route exact path="/about" element={<About/>}/>
       </Routes>
       </div>
